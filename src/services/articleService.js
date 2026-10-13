@@ -15,10 +15,7 @@ export const getArticles = async (query = {}) => {
 
   const where = {};
   if (keyword) {
-    where.OR = [
-      { title: { contains: keyword, mode: 'insensitive' } },
-      { content: { contains: keyword, mode: 'insensitive' } },
-    ];
+    where.OR = [{ title: { contains: keyword, mode: 'insensitive' } }];
   }
 
   const orderByOption = {
