@@ -4,9 +4,11 @@ import articleRouter from '#src/routes/articleRouter.js';
 import { config } from '#src/config/config.js';
 import { prisma } from '#src/db/prisma.js';
 import { errorHandler } from '#src/middlewares/error-handler.js';
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.use('/products', productRouter);
 app.use('/articles', articleRouter);
