@@ -48,16 +48,16 @@ articleRouter.delete(
   articleController.deleteArticle,
 );
 
-articleRouter.post(
-  '/:articleId/comments',
-  validate(createCommentSchema),
-  commentController.createArticleComment,
-);
-
 articleRouter.get(
   '/:articleId/comments',
   validate(getCommentsSchema),
   commentController.getArticleComments,
+);
+
+articleRouter.post(
+  '/:articleId/comments',
+  validate(createCommentSchema),
+  commentController.createArticleComment,
 );
 
 articleRouter.patch(
@@ -72,4 +72,5 @@ articleRouter.delete(
   validate(commentIdSchema),
   commentController.deleteArticleComment,
 );
+
 export default articleRouter;
